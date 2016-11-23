@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="refresh" content="300">
+<title>Zero assnmnt</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="static/css/index_style.css">
+</head>
+
+<body >
+<div>
+<a href="https://nseindia.com/live_market/dynaContent/live_analysis/top_gainers_losers.htm?cat=G" target="_blank" style="text-decoration: none"><div id="head-board">Nifty Top 10 Gainers</div></a>
+
+<div id="tiles-container">
+
+% for i in range(0,10):
+	<div class="tile" >
+	<p class="tile-number" >${(i+1)}</p>
+	<table id="data-table">
+	<tr><th id="tile-title" ><a href="https://www.nseindia.com/${mydata[i][0][1:]}" target="_blank" >${mydata[i][1]}<a></th></tr>
+	<tr><th>LTP ${mydata[i][2]}</th></tr>
+	<tr><th>Change  ${mydata[i][3]}</th></tr>
+	<tr><th>Traded quantity : ${mydata[i][4]}</th></tr>
+	<tr><th>Value : ${mydata[i][5]}</th></tr>
+	<tr><th>open : ${mydata[i][6]}</th></tr>
+	<tr><th>high : ${mydata[i][7]}</th></tr>
+	<tr><th>low : ${mydata[i][8]}</th></tr>
+	<tr><th>Prev close : ${mydata[i][9]}</th></tr>
+	<tr><th>latest ex-date : ${mydata[i][10]}</th></tr>
+	</table>
+	</div>
+% endfor 
+
+
+</div>
+
+</body>
+<script type="text/javascript">
+ $(document).ready(function(){
+ $(".tile").mouseenter(function(){
+       $(this).find("table:first").fadeIn(1000);
+	 $(this).find("p:first").fadeOut(0);
+	});
+
+ $(".tile").mouseleave(function(){
+		  console.log("out")
+	$(this).find("p:first").fadeIn(1000);
+	$(this).find("table:first").fadeOut(0);});
+
+ });
+setInterval(function() {
+                  window.location.reload();
+                }, 60000); 
+</script>
