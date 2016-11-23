@@ -21,11 +21,11 @@ if __name__ == '__main__':
 		    'global': {
 		'environment': 'production',
        	 'log.screen': True,
-	        'server.socket_host': '0.0.0.0',
-	        'server.socket_port': 8080,
+	        'server.socket_host': '0.0.0.0', # Tell cherryPy to run  in 0.0.0.0 to give remote access
+	        'server.socket_port': 8080, # Tell cherryPy to run app in 8080 port
 	        'engine.autoreload_on': True,
-	        'log.error_file': os.path.join(current_dir, 'errors.log'),
-	        'log.access_file': os.path.join(current_dir, 'access.log'),
+	        'log.error_file': os.path.join(current_dir, 'errors.log'),  # set the error logs file
+	        'log.access_file': os.path.join(current_dir, 'access.log'), # access file
 	    },
 	    '/':{
 	        'tools.staticdir.root' : current_dir,  # root of static directory
