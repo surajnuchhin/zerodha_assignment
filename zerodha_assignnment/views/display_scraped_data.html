@@ -13,20 +13,20 @@
 
 <div id="tiles-container">
 
-% for i in range(0,10):
+% for i in range(0,len(mydata)):
 	<div class="tile" >
 	<p class="tile-number" >${(i+1)}</p>
 	<table id="data-table">
 	<tr><th id="tile-title" ><a href="https://www.nseindia.com/${mydata[i][0][1:]}" target="_blank" >${mydata[i][1]}<a></th></tr>
-	<tr><th>LTP ${mydata[i][2]}</th></tr>
-	<tr><th>Change  ${mydata[i][3]}</th></tr>
+	<tr><th>LTP : ${mydata[i][2]}</th></tr>
+	<tr><th>Change :  ${mydata[i][3]}</th></tr>
 	<tr><th>Traded quantity : ${mydata[i][4]}</th></tr>
 	<tr><th>Value : ${mydata[i][5]}</th></tr>
 	<tr><th>open : ${mydata[i][6]}</th></tr>
 	<tr><th>high : ${mydata[i][7]}</th></tr>
 	<tr><th>low : ${mydata[i][8]}</th></tr>
 	<tr><th>Prev close : ${mydata[i][9]}</th></tr>
-	<tr><th>latest ex-date : ${mydata[i][10]}</th></tr>
+	<tr><th>latest ex-date : ${mydata[i][10][:-1]}</th></tr>
 	</table>
 	</div>
 % endfor 
